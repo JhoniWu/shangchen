@@ -29,9 +29,9 @@ public class JwtTokenUtil {
 	@Value("${jwt.expiration}")
 	private Long expiration;
 
-	/*
+    /**
 	* 根据负责生成JWT的token
-	* */
+     */
 	private String generateToken(Map<String, Object> claims){
 		return Jwts.builder()
 			.setClaims(claims)
@@ -40,9 +40,9 @@ public class JwtTokenUtil {
 			.compact();
 	}
 
-	/*
+    /**
 	*从token中获取JWT中的负载
-	* */
+     */
 	private Claims getClaimsFromToken(String token){
 		Claims claims = null;
 		try{
@@ -56,9 +56,9 @@ public class JwtTokenUtil {
 		return claims;
 	}
 
-	/*
-	* 生成token过期时间
-	* */
+    /**
+     * 生成token的过期时间
+     */
 	private Date generateExpirationDate() {
 		return new Date(System.currentTimeMillis() + expiration * 1000);
 	}
