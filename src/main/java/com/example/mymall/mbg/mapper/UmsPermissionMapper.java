@@ -3,12 +3,10 @@ package com.example.mymall.mbg.mapper;
 import com.example.mymall.mbg.model.UmsPermission;
 import com.example.mymall.mbg.model.UmsPermissionExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface UmsPermissionMapper {
-    int countByExample(UmsPermissionExample example);
+    long countByExample(UmsPermissionExample example);
 
     int deleteByExample(UmsPermissionExample example);
 

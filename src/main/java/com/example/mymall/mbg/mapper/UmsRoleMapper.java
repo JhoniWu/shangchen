@@ -3,12 +3,10 @@ package com.example.mymall.mbg.mapper;
 import com.example.mymall.mbg.model.UmsRole;
 import com.example.mymall.mbg.model.UmsRoleExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface UmsRoleMapper {
-    int countByExample(UmsRoleExample example);
+    long countByExample(UmsRoleExample example);
 
     int deleteByExample(UmsRoleExample example);
 

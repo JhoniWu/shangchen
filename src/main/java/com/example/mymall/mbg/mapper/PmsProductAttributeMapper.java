@@ -3,12 +3,10 @@ package com.example.mymall.mbg.mapper;
 import com.example.mymall.mbg.model.PmsProductAttribute;
 import com.example.mymall.mbg.model.PmsProductAttributeExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface PmsProductAttributeMapper {
-    int countByExample(PmsProductAttributeExample example);
+    long countByExample(PmsProductAttributeExample example);
 
     int deleteByExample(PmsProductAttributeExample example);
 

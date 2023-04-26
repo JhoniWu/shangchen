@@ -104,6 +104,5 @@ public class PmsBrandController {
 	public CommonResult<PmsBrand> brand(@PathVariable("id") Long id) {
 		return CommonResult.success(brandService.getBrand(id));
 	}
-
 }
 

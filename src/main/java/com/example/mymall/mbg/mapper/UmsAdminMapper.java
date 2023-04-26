@@ -3,12 +3,10 @@ package com.example.mymall.mbg.mapper;
 import com.example.mymall.mbg.model.UmsAdmin;
 import com.example.mymall.mbg.model.UmsAdminExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface UmsAdminMapper {
-    int countByExample(UmsAdminExample example);
+    long countByExample(UmsAdminExample example);
 
     int deleteByExample(UmsAdminExample example);
 

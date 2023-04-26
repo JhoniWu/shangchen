@@ -49,6 +49,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 	@Autowired
 	private UmsAdminRoleRelationDao adminRoleRelationDao;
 
+
+	//通过用户名获取用户
 	@Override
 	public UmsAdmin getAdminByUsername(String username) {
 		UmsAdminExample example = new UmsAdminExample();
@@ -60,6 +62,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 		return null;
 	}
 
+	
 	@Override
 	public UmsAdmin register(UmsAdmin umsAdminParam) {
 		UmsAdmin umsAdmin = new UmsAdmin();
