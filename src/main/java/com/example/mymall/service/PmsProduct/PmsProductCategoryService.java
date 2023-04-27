@@ -7,6 +7,10 @@ import java.util.List;
 public interface PmsProductCategoryService {
 	List<PmsProductCategory> listAllCategory();
 
+	List<PmsProductCategory> listFirstLevelCategory();
+
+	List<PmsProductCategory> listSecondLevelCategoryById(Long parentId);
+
 	int deleteCategory (Long id);
 
 	int createCategory (PmsProductCategory pmsProductCategory);

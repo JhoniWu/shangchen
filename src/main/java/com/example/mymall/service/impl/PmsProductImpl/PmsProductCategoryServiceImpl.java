@@ -28,6 +28,20 @@ public class PmsProductCategoryServiceImpl implements PmsProductCategoryService 
 	}
 
 	@Override
+	public List<PmsProductCategory> listFirstLevelCategory() {
+		PmsProductCategoryExample example = new PmsProductCategoryExample();
+		example.createCriteria().andParentIdEqualTo(0L);
+		return pmsProductCategoryMapper.selectByExample(example);
+	}
+
+	@Override
+	public List<PmsProductCategory> listSecondLevelCategoryById(Long parentId) {
+		PmsProductCategoryExample example = new PmsProductCategoryExample();
+		example.createCriteria().andParentIdEqualTo(parentId);
+		return pmsProductCategoryMapper.selectByExample(example);
+	}
+
+	@Override
 	public int createCategory(PmsProductCategory pmsProductCategory) {
 		return pmsProductCategoryMapper.insertSelective(pmsProductCategory);
 	}

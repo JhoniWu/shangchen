@@ -39,9 +39,6 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.mymall.mbg.mapper"
                              targetProject="E:\aProgramByScu\JAVA_BackEnd\MyMall\src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_brand">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
         <table tableName="ums_admin">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
@@ -60,7 +57,16 @@
         <table tableName="ums_admin_permission_relation">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+        <table tableName="pms_brand">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
         <table tableName="pms_product">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_product_category">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_product_attribute_category">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
         <table tableName="pms_product_attribute">
@@ -69,7 +75,7 @@
         <table tableName="pms_product_attribute_value">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
-        <table tableName="pms_product_category">
+        <table tableName="pms_product_category_attribute_relation">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>

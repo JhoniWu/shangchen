@@ -2,18 +2,14 @@ package com.example.mymall.controller.PmsProduct;
 
 import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
-import com.example.mymall.controller.PmsBrandController;
 import com.example.mymall.mbg.model.PmsProductCategory;
-
 import com.example.mymall.service.PmsProduct.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -94,10 +90,24 @@ public class PmsProductCategoryController {
 		return CommonResult.success(CommonPage.restPage(cateList));
 	}
 
-	@ApiOperation("获取指定id的分裂列表")
+	@ApiOperation("获取指定id的分类列表")
 	@RequestMapping(value = "/{id}",method = RequestMethod.GET)
 	@ResponseBody
 	public CommonResult<PmsProductCategory> category(@PathVariable("id") Long id) {
 		return CommonResult.success(pmsProductCategoryService.getCategory(id));
+	}
+
+	@ApiOperation("获取一级分类")
+	@RequestMapping(value = "/first",method = RequestMethod.GET)
+	@ResponseBody
+	public CommonResult<List<PmsProductCategory>> getFirstLevelCategory(){
+		return CommonResult.success(pmsProductCategoryService.listFirstLevelCategory());
+	}
+
+	@ApiOperation("根据一级分类获取二级分类")
+	@RequestMapping(value = "/second/{id}", method = RequestMethod.GET)
+	@ResponseBody
+	public CommonResult<List<PmsProductCategory>> getSecondLevelCategory(@PathVariable("id") Long id){
+		return CommonResult.success(pmsProductCategoryService.listSecondLevelCategoryById(id));
 	}
 }
