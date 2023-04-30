@@ -1,5 +1,6 @@
 package com.example.mymall.service.PmsProduct.Attribute;
 
+import com.example.mymall.dto.PmsProductAttributeCategoryItem;
 import com.example.mymall.mbg.model.PmsProductAttributeCategory;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface PmsProductAttributeCategoryService {
 	List<PmsProductAttributeCategory> listAttributeCategory(int pageNum, int pageSize);
 
 	PmsProductAttributeCategory getAttributeCategory(Long id);
+
+	List<PmsProductAttributeCategoryItem> getListWithAttr();
 }

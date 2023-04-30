@@ -1,5 +1,7 @@
 package com.example.mymall.service.impl.PmsProductImpl.Attribute;
 
+import com.example.mymall.dao.PmsProductAttributeCategoryDao;
+import com.example.mymall.dto.PmsProductAttributeCategoryItem;
 import com.example.mymall.mbg.mapper.PmsProductAttributeCategoryMapper;
 import com.example.mymall.mbg.model.PmsProductAttributeCategory;
 import com.example.mymall.mbg.model.PmsProductAttributeCategoryExample;
@@ -15,6 +17,9 @@ public class PmsProductAttributeCategoryServiceImpl implements PmsProductAttribu
 
 	@Autowired
 	private PmsProductAttributeCategoryMapper ppam;
+	@Autowired
+	private PmsProductAttributeCategoryDao pmsProductAttributeCategoryDao;
+
 
 	@Override
 	public List<PmsProductAttributeCategory> listAllAttributeCategory() {
@@ -41,12 +46,17 @@ public class PmsProductAttributeCategoryServiceImpl implements PmsProductAttribu
 
 	@Override
 	public List<PmsProductAttributeCategory> listAttributeCategory(int pageNum, int pageSize) {
-		PageHelper.startPage(pageNum,pageSize);
+		PageHelper.startPage(pageNum, pageSize);
 		return ppam.selectByExample(new PmsProductAttributeCategoryExample());
 	}
 
 	@Override
 	public PmsProductAttributeCategory getAttributeCategory(Long id) {
 		return ppam.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<PmsProductAttributeCategoryItem> getListWithAttr() {
+		return pmsProductAttributeCategoryDao.getListWithAttr();
 	}
 }
