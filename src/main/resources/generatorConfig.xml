@@ -60,9 +60,24 @@
         <table tableName="pms_brand">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+
         <table tableName="pms_product">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+        <table tableName="pms_sku_stock">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_product_ladder">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_product_full_reduction">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_member_price">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
         <table tableName="pms_product_category">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
@@ -76,6 +91,18 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
         <table tableName="pms_product_category_attribute_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
+        <table tableName="cms_subject_product_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="cms_prefrence_area_product_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <table tableName="pms_product_vertify_record">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>
