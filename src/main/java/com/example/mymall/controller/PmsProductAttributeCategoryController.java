@@ -1,9 +1,9 @@
-package com.example.mymall.controller.PmsProduct.Attribute;
+package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.mbg.model.PmsProductAttributeCategory;
-import com.example.mymall.service.PmsProduct.Attribute.PmsProductAttributeCategoryService;
+import com.example.mymall.service.PmsProductAttributeCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

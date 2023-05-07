@@ -1,9 +1,9 @@
-package com.example.mymall.service.impl.PmsProductImpl;
+package com.example.mymall.service.impl;
 
 import com.example.mymall.mbg.mapper.PmsProductCategoryMapper;
 import com.example.mymall.mbg.model.PmsProductCategory;
 import com.example.mymall.mbg.model.PmsProductCategoryExample;
-import com.example.mymall.service.PmsProduct.PmsProductCategoryService;
+import com.example.mymall.service.PmsProductCategoryService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

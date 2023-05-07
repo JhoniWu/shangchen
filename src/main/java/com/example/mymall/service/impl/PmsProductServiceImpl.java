@@ -1,4 +1,4 @@
-package com.example.mymall.service.impl.PmsProductImpl;
+package com.example.mymall.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
@@ -8,7 +8,7 @@ import com.example.mymall.dto.PmsProductQueryParam;
 import com.example.mymall.dto.PmsProductResult;
 import com.example.mymall.mbg.mapper.*;
 import com.example.mymall.mbg.model.*;
-import com.example.mymall.service.PmsProduct.PmsProductService;
+import com.example.mymall.service.PmsProductService;
 import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

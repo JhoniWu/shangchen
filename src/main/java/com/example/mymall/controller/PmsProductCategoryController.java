@@ -1,9 +1,9 @@
-package com.example.mymall.controller.PmsProduct;
+package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.mbg.model.PmsProductCategory;
-import com.example.mymall.service.PmsProduct.PmsProductCategoryService;
+import com.example.mymall.service.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

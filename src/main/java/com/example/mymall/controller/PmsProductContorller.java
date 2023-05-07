@@ -1,4 +1,4 @@
-package com.example.mymall.controller.PmsProduct;
+package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
@@ -6,7 +6,7 @@ import com.example.mymall.dto.PmsProductParam;
 import com.example.mymall.dto.PmsProductQueryParam;
 import com.example.mymall.dto.PmsProductResult;
 import com.example.mymall.mbg.model.PmsProduct;
-import com.example.mymall.service.PmsProduct.PmsProductService;
+import com.example.mymall.service.PmsProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

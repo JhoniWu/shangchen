@@ -1,4 +1,4 @@
-package com.example.mymall.service.PmsProduct;
+package com.example.mymall.service;
 
 import com.example.mymall.mbg.model.PmsProductCategory;
 

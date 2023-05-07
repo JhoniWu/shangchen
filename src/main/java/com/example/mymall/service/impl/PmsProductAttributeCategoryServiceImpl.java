@@ -1,11 +1,11 @@
-package com.example.mymall.service.impl.PmsProductImpl.Attribute;
+package com.example.mymall.service.impl;
 
 import com.example.mymall.dao.PmsProductAttributeCategoryDao;
 import com.example.mymall.dto.PmsProductAttributeCategoryItem;
 import com.example.mymall.mbg.mapper.PmsProductAttributeCategoryMapper;
 import com.example.mymall.mbg.model.PmsProductAttributeCategory;
 import com.example.mymall.mbg.model.PmsProductAttributeCategoryExample;
-import com.example.mymall.service.PmsProduct.Attribute.PmsProductAttributeCategoryService;
+import com.example.mymall.service.PmsProductAttributeCategoryService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

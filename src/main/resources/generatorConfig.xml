@@ -105,5 +105,13 @@
         <table tableName="pms_product_vertify_record">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+
+        <table tableName="pms_comment">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="pms_comment_replay">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
     </context>
 </generatorConfiguration>

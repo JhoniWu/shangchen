@@ -1,4 +1,4 @@
-package com.example.mymall.service.PmsProduct.Attribute;
+package com.example.mymall.service;
 
 import com.example.mymall.mbg.model.PmsProductAttribute;
 import org.springframework.transaction.annotation.Transactional;

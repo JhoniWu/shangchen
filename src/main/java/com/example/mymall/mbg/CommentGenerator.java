@@ -1,6 +1,5 @@
 package com.example.mymall.mbg;
 
-import com.github.pagehelper.util.StringUtil;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.CompilationUnit;
@@ -72,5 +71,4 @@ public class CommentGenerator extends DefaultCommentGenerator {
 			compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_PROPERTY_FULL_CLASS_NAME));
 		}
 	}
-
 }
