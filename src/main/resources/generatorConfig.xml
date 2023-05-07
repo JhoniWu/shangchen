@@ -113,5 +113,16 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 
+        <table tableName="oms_order">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="oms_order_item">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="oms_order_operate_history">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
     </context>
 </generatorConfiguration>
