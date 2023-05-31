@@ -27,6 +27,7 @@ import java.util.Map;
 @Api(tags = "UmsAdminController", description = "后台用户管理")
 @RequestMapping("/admin")
 public class UmsAdminController {
+
 	@Autowired
 	private UmsAdminService adminService;
 	@Value("${jwt.tokenHeader}")

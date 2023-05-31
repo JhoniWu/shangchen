@@ -1,14 +1,18 @@
 package com.example.mymall.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.example.mymall.mbg.mapper.PmsBrandMapper;
 import com.example.mymall.mbg.model.PmsBrand;
 import com.example.mymall.mbg.model.PmsBrandExample;
 import com.example.mymall.service.PmsBrandService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: MyMall
@@ -21,6 +25,8 @@ public class PmsBrandServiceImpl implements PmsBrandService {
 
 	@Autowired
 	private PmsBrandMapper brandMapper;
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
 
 	@Override
 	public List<PmsBrand> listAllBrand() {
@@ -51,6 +57,15 @@ public class PmsBrandServiceImpl implements PmsBrandService {
 
 	@Override
 	public PmsBrand getBrand(Long id) {
-		return brandMapper.selectByPrimaryKey(id);
+		String key = "shop:brand:" + id;
+		String shop = stringRedisTemplate.opsForValue().get(key);
+		if (StrUtil.isNotBlank(shop)) {
+			PmsBrand pmsBrand = JSONUtil.toBean(shop, PmsBrand.class);
+			return pmsBrand;
+		}
+		PmsBrand pmsBrandsa = brandMapper.selectByPrimaryKey(id);
+		String jsonStr = JSONUtil.toJsonStr(pmsBrandsa);
+		stringRedisTemplate.opsForValue().set(key, jsonStr, 30, TimeUnit.MINUTES);
+		return pmsBrandsa;
 	}
 }
