@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class PmsProductOperateLog implements Serializable {
-	private Long id;
+    private Long id;
 
 	private Long productId;
 
