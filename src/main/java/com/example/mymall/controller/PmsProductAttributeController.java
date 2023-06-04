@@ -4,7 +4,7 @@ import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.dto.ProductAttrInfo;
 import com.example.mymall.mbg.model.PmsProductAttribute;
-import com.example.mymall.service.PmsProductAttributeService;
+import com.example.mymall.service.Pms.PmsProductAttributeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

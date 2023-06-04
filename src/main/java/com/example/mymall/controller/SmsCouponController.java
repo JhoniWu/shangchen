@@ -5,7 +5,7 @@ import com.example.mymall.common.CommonResult;
 import com.example.mymall.dto.SmsCouponParam;
 import com.example.mymall.mbg.model.SmsCoupon;
 import com.example.mymall.mbg.model.SmsCouponHistory;
-import com.example.mymall.service.SmsCouponService;
+import com.example.mymall.service.Sms.SmsCouponService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

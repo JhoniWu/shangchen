@@ -4,7 +4,7 @@ import com.example.mymall.common.CommonResult;
 import com.example.mymall.dto.UmsAdminLoginParam;
 import com.example.mymall.mbg.model.UmsAdmin;
 import com.example.mymall.mbg.model.UmsPermission;
-import com.example.mymall.service.UmsAdminService;
+import com.example.mymall.service.Ums.UmsAdminService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonResult;
-import com.example.mymall.service.UmsMemberService;
+import com.example.mymall.service.Ums.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.example.mymall.controller;
 import com.example.mymall.common.CommonPage;
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.mbg.model.PmsProductCategory;
-import com.example.mymall.service.PmsProductCategoryService;
+import com.example.mymall.service.Pms.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
