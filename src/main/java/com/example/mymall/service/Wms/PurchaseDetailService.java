@@ -1,11 +1,8 @@
 package com.example.mymall.service.Wms;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.mymall.common.utils.guigu.utils.PageUtils;
 import com.example.mymall.mbg.model.WmsPurchaseDetail;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @program: MyMall
@@ -13,8 +10,8 @@ import java.util.Map;
  * @author: Max Wu
  * @create: 2023-06-02 16:42
  **/
-public interface PurchaseDetailService extends IService<WmsPurchaseDetail> {
-	PageUtils queryPage(Map<String, Object> params);
+public interface PurchaseDetailService {
+	List<WmsPurchaseDetail> queryPage(WmsPurchaseDetail detail, Integer pageSize, Integer pageNum);
 
 	List<WmsPurchaseDetail> listDetailByPurchaseId(Long id);
 }

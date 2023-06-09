@@ -1,4 +1,4 @@
-package com.example.mymall.dto.WmsVo;
+package com.example.mymall.dto.Wms;
 
 import lombok.Data;
 
