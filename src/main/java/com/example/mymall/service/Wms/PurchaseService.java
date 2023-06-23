@@ -21,5 +21,6 @@ public interface PurchaseService {
     void received(List<Long> ids);
 
     void done(PurchaseDoneVo doneVo);
+
 }
 

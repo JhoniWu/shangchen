@@ -6,6 +6,7 @@ import com.example.mymall.mbg.model.WmsPurchaseDetailExample;
 import com.example.mymall.service.Wms.PurchaseDetailService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-09 17:21
  **/
+@Service
 public class PurchaseDetailServiceImpl implements PurchaseDetailService {
 
 	@Autowired
@@ -30,6 +32,7 @@ public class PurchaseDetailServiceImpl implements PurchaseDetailService {
 		criteria.andSkuIdEqualTo(detail.getSkuId());
 		criteria.andStatusEqualTo(detail.getStatus());
 		criteria.andWareIdEqualTo(detail.getWareId());
+
 		return purchaseDetailMapper.selectByExample(example);
 	}
 

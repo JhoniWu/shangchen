@@ -8,6 +8,7 @@ import com.example.mymall.mbg.model.WmsWareSkuExample;
 import com.example.mymall.service.Wms.WareSkuService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-03 10:12
  **/
+@Service
 public class WareSkuServiceImpl extends ServiceImpl<WmsWareSkuDao, WmsWareSku> implements WareSkuService {
 	@Autowired
 	private WmsWareSkuMapper wareSkuMapper;

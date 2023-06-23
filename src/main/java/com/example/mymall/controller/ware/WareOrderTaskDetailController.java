@@ -5,10 +5,7 @@ import com.example.mymall.mbg.mapper.WmsWareOrderTaskDetailMapper;
 import com.example.mymall.mbg.model.WmsWareOrderTaskDetail;
 import com.example.mymall.service.Wms.WareOrderTaskDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +15,9 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-09 17:43
  **/
-public class WareOrderTaskDEtailController {
+@RequestMapping("/ware/ordertaskdetail")
+@RestController
+public class WareOrderTaskDetailController {
 	@Autowired
 	private WareOrderTaskDetailService wareOrderTaskDetailService;
 

@@ -18,6 +18,8 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-09 17:42
  **/
+@RequestMapping("/ware/purchase")
+@RestController
 public class PurchaseController {
 	@Autowired
 	private PurchaseService purchaseService;
@@ -35,6 +37,7 @@ public class PurchaseController {
 
 	/**
 	 * 领取采购单
+	 * 采购员领取采购单列表，改变采购单的状态，
 	 *
 	 * @return
 	 */

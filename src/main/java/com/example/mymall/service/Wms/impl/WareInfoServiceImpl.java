@@ -6,6 +6,7 @@ import com.example.mymall.mbg.model.WmsWareInfoExample;
 import com.example.mymall.service.Wms.WareInfoService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-03 10:48
  **/
+@Service
 public class WareInfoServiceImpl implements WareInfoService {
 	@Autowired
 	private WmsWareInfoMapper wareInfoMapper;

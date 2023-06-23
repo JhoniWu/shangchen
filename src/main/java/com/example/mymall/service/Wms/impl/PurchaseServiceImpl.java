@@ -10,10 +10,12 @@ import com.example.mymall.mbg.model.WmsPurchase;
 import com.example.mymall.mbg.model.WmsPurchaseDetail;
 import com.example.mymall.mbg.model.WmsPurchaseDetailExample;
 import com.example.mymall.mbg.model.WmsPurchaseExample;
+import com.example.mymall.service.Wms.PurchaseDetailService;
 import com.example.mymall.service.Wms.PurchaseService;
 import com.example.mymall.service.Wms.WareSkuService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Field;
@@ -30,7 +32,10 @@ import java.util.stream.Collectors;
  * @author: Max Wu
  * @create: 2023-06-05 14:19
  **/
+@Service
 public class PurchaseServiceImpl implements PurchaseService {
+	@Autowired
+	private PurchaseDetailService purchaseDetailService;
 
 	@Autowired
 	private WmsPurchaseMapper purchaseMapper;
@@ -92,6 +97,10 @@ public class PurchaseServiceImpl implements PurchaseService {
 			purchaseMapper.insert(purchase);
 			purchaseId = purchase.getId();
 		}
+//正在采购的采购单不能合并
+		if (purchaseId != 0 && purchaseId != 1) {
+			return;
+		}
 
 		List<Long> items = mergeVo.getItems();
 		Long finalPurchaseId = purchaseId;
@@ -116,6 +125,9 @@ public class PurchaseServiceImpl implements PurchaseService {
 	 */
 	@Override
 	public void received(List<Long> ids) {
+		//确认当前采购单是新建或者已分配状态
+		//
+		//
 		List<WmsPurchase> collect = ids.stream().map(id -> {
 			WmsPurchase byId = purchaseMapper.selectByPrimaryKey(id);
 			return byId;
@@ -139,7 +151,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 		collect.forEach((item) -> {
 			WmsPurchaseDetailExample example = new WmsPurchaseDetailExample();
 			example.createCriteria().andIdEqualTo(item.getId());
-			List<WmsPurchaseDetail> entities = purchaseDetailMapper.selectByExample(example);
+			List<WmsPurchaseDetail> entities = purchaseDetailService.listDetailByPurchaseId(item.getId());
 			List<WmsPurchaseDetail> detailEntities = entities.stream().map(entity -> {
 				WmsPurchaseDetail entity1 = new WmsPurchaseDetail();
 				entity1.setId(entity.getId());
@@ -186,4 +198,5 @@ public class PurchaseServiceImpl implements PurchaseService {
 		purchase.setUpdateTime(new Date());
 		purchaseMapper.updateByPrimaryKey(purchase);
 	}
+
 }
