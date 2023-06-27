@@ -44,7 +44,7 @@ public class WareSkuServiceImpl extends ServiceImpl<WmsWareSkuDao, WmsWareSku> i
 			sku.setStock(skuNum);
 			sku.setWareId(wareId);
 			sku.setStockLocked(0);
-
+			sku.setSkuName("");
 			//TODO 远程查询sku的名字，如果失败，整个事务无需回滚
 			//1、自己catch异常
 			//TODO 还可以用什么办法让异常出现以后不回滚？高级

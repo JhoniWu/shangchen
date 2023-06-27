@@ -1,9 +1,9 @@
-package com.example.mymall.controller.ware;
+package com.example.mymall.controller.Wms;
 
 import com.example.mymall.common.CommonResult;
-import com.example.mymall.mbg.mapper.WmsWareInfoMapper;
-import com.example.mymall.mbg.model.WmsWareInfo;
-import com.example.mymall.service.Wms.WareInfoService;
+import com.example.mymall.mbg.mapper.WmsPurchaseDetailMapper;
+import com.example.mymall.mbg.model.WmsPurchaseDetail;
+import com.example.mymall.service.Wms.PurchaseDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,23 +15,23 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-06-09 17:42
  **/
-@RequestMapping("/ware/info")
 @RestController
-public class WareInfoController {
+@RequestMapping("/ware/purchasedetail")
+public class PurchaseDetailController {
 	@Autowired
-	private WareInfoService WareInfoService;
+	private PurchaseDetailService purchaseDetailService;
 
 	@Autowired
-	private WmsWareInfoMapper mapper;
+	private WmsPurchaseDetailMapper mapper;
 
 	/**
 	 * 列表
 	 */
 	@RequestMapping("/list")
 	//@RequiresPermissions("ware:wareordertaskdetail:list")
-	public CommonResult list(@RequestParam("pageSize") Integer pageSize, @RequestParam("pageNum") Integer pageNum) {
-		List<WmsWareInfo> wmsWareInfo = WareInfoService.queryPage(pageSize, pageNum);
-		return CommonResult.success(wmsWareInfo);
+	public CommonResult list(@RequestBody WmsPurchaseDetail detail, @RequestParam("pageSize") Integer pageSize, @RequestParam("pageNum") Integer pageNum) {
+		List<WmsPurchaseDetail> wmsPurchaseDetail = purchaseDetailService.queryPage(detail, pageSize, pageNum);
+		return CommonResult.success(wmsPurchaseDetail);
 	}
 
 
@@ -41,9 +41,9 @@ public class WareInfoController {
 	@RequestMapping("/info/{id}")
 	//@RequiresPermissions("ware:wareordertaskdetail:info")
 	public CommonResult info(@PathVariable("id") Long id) {
-		WmsWareInfo wmsWareInfo = mapper.selectByPrimaryKey(id);
+		WmsPurchaseDetail de = mapper.selectByPrimaryKey(id);
 
-		return CommonResult.success(wmsWareInfo);
+		return CommonResult.success(de);
 	}
 
 	/**
@@ -51,8 +51,8 @@ public class WareInfoController {
 	 */
 	@RequestMapping("/save")
 	//@RequiresPermissions("ware:wareordertaskdetail:save")
-	public CommonResult save(@RequestBody WmsWareInfo wareInfo) {
-		mapper.insert(wareInfo);
+	public CommonResult save(@RequestBody WmsPurchaseDetail detail) {
+		mapper.insert(detail);
 
 		return CommonResult.success("");
 	}
@@ -62,8 +62,8 @@ public class WareInfoController {
 	 */
 	@RequestMapping("/update")
 	//@RequiresPermissions("ware:wareordertaskdetail:update")
-	public CommonResult update(@RequestBody WmsWareInfo wareInfo) {
-		mapper.updateByPrimaryKeySelective(wareInfo);
+	public CommonResult update(@RequestBody WmsPurchaseDetail detail) {
+		mapper.updateByPrimaryKeySelective(detail);
 
 		return CommonResult.success("");
 	}

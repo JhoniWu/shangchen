@@ -57,6 +57,37 @@
         <table tableName="ums_admin_permission_relation">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+
+        <!--member表-->
+        <table tableName="ums_member">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_level">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_login_log">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_member_tag_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_receive_address">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_rule_setting">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_statistics_info">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_tag">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ums_member_task">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
         <table tableName="pms_brand">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
@@ -164,7 +195,10 @@
         <table tableName="wms_ware_sku">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
-
+        <!--购物车表-->
+        <table tableName="oms_cart_item">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
 
     </context>
 </generatorConfiguration>

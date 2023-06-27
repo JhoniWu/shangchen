@@ -167,6 +167,10 @@ public class PurchaseServiceImpl implements PurchaseService {
 
 	@Override
 	public void done(PurchaseDoneVo doneVo) {
+		//改变采购单状态
+		//改变采购项状态
+		//入库
+
 		Long id = doneVo.getId();
 		Boolean flag = true;
 		List<PurchaseItemDoneVo> items = doneVo.getItems();
@@ -181,8 +185,8 @@ public class PurchaseServiceImpl implements PurchaseService {
 				detailEntity.setStatus(WareConstant.PurchaseDetailStatusEnum.FINISH.getCode());
 				////3、将成功采购的进行入库
 				WmsPurchaseDetail entity = purchaseDetailMapper.selectByPrimaryKey(id);
-				wareSkuService.addStock(entity.getSkuId(), entity.getWareId(), entity.getSkuNum());
-
+				wareSkuService.addStock(entity.getSkuId(), entity.getWareId(),
+					entity.getSkuNum());
 			}
 			detailEntity.setId(item.getItemId());
 			updates.add(detailEntity);

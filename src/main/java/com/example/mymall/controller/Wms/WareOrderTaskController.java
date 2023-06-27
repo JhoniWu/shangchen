@@ -1,4 +1,4 @@
-package com.example.mymall.controller.ware;
+package com.example.mymall.controller.Wms;
 
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.mbg.mapper.WmsWareOrderTaskMapper;
