@@ -1,7 +1,7 @@
 package com.example.mymall.service.Oms;
 
-import com.example.mymall.dao.Oms.CartProduct;
-import com.example.mymall.dao.Oms.CartPromotionItem;
+import com.example.mymall.dto.Oms.CartProduct;
+import com.example.mymall.dto.Oms.CartPromotionItem;
 import com.example.mymall.mbg.model.OmsCartItem;
 import org.springframework.transaction.annotation.Transactional;
 

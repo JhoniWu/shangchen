@@ -1,5 +1,6 @@
-package com.example.mymall.dao.Oms;
+package com.example.mymall.dto.Oms;
 
+import com.example.mymall.mbg.model.OmsCartItem;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -12,7 +13,7 @@ import java.math.BigDecimal;
  * @create: 2023-06-27 15:19
  **/
 @Data
-public class CartPromotionItem {
+public class CartPromotionItem extends OmsCartItem {
 	@ApiModelProperty("促销活动信息")
 	private String promotionMessage;
 	@ApiModelProperty("促销活动减去的金额，针对每个商品")
