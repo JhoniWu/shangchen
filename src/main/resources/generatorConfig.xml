@@ -146,16 +146,6 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 
-        <table tableName="oms_order">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
-        <table tableName="oms_order_item">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
-        <table tableName="oms_order_operate_history">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
-
         <table tableName="sms_coupon">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
@@ -197,6 +187,34 @@
         </table>
         <!--购物车表-->
         <table tableName="oms_cart_item">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--订单表-->
+        <table tableName="oms_order">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <!--订单商品信息表-->
+        <table tableName="oms_order_item">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <!--订单操作记录表-->
+        <table tableName="oms_order_operate_history">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <!--订单设置表-->
+        <table tableName="oms_order_setting">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="oms_order_return_reason">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="oms_order_return_apply">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="oms_company_address">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 

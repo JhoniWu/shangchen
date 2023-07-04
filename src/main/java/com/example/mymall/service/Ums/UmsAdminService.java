@@ -28,4 +28,28 @@ public interface UmsAdminService {
 	 * 获取用户所有权限（包括角色权限和+-权限）
 	 */
 	List<UmsPermission> getPermissionList(Long adminId);
+
+	/**
+	 * 刷新token
+	 */
+	String refreshToken(String oldToken);
+
+	/**
+	 * 根据用户id获取用户
+	 */
+	UmsAdmin getItem(Long id);
+
+	/**
+	 * 根据用户名或者昵称分页查询
+	 */
+
+	/**
+	 * 获取缓存服务
+	 */
+	UmsAdminCacheService getCacheService();
+
+	/**
+	 * 修改密码
+	 */
+
 }

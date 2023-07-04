@@ -59,7 +59,6 @@ public class UmsAdminController {
 		tokenMap.put("tokenHead",tokenHead);
 		return CommonResult.success(tokenMap);
 	}
-
     @ApiOperation("获取用户所有权限（包括+-权限）")
     @RequestMapping(value = "/permission/{adminId}", method = RequestMethod.GET)
 	@ResponseBody
@@ -67,5 +66,6 @@ public class UmsAdminController {
 		List<UmsPermission> permissionList = adminService.getPermissionList(adminId);
 		return CommonResult.success(permissionList);
 	}
+
 
 }

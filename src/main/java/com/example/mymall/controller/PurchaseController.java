@@ -1,4 +1,4 @@
-package com.example.mymall.controller.Wms;
+package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonResult;
 import com.example.mymall.dto.Wms.MergeVo;

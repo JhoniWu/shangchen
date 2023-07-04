@@ -6,6 +6,7 @@ import com.example.mymall.mbg.mapper.UmsAdminMapper;
 import com.example.mymall.mbg.model.UmsAdmin;
 import com.example.mymall.mbg.model.UmsAdminExample;
 import com.example.mymall.mbg.model.UmsPermission;
+import com.example.mymall.service.Ums.UmsAdminCacheService;
 import com.example.mymall.service.Ums.UmsAdminService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -100,5 +101,20 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 	@Override
 	public List<UmsPermission> getPermissionList(Long adminId) {
 		return adminRoleRelationDao.getPermissionList(adminId);
+	}
+
+	@Override
+	public String refreshToken(String oldToken) {
+		return null;
+	}
+
+	@Override
+	public UmsAdmin getItem(Long id) {
+		return null;
+	}
+
+	@Override
+	public UmsAdminCacheService getCacheService() {
+		return null;
 	}
 }

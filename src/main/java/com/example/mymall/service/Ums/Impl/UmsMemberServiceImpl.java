@@ -66,9 +66,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 		for (int i = 0; i < 6; i++) {
 			sb.append(random.nextInt(10));
 		}
-		//验证码绑定手机号并存储到redis
-		redisService.set(REDIS_KEY_PREFIX_AUTH_CODE + telephone, sb.toString());
-		redisService.expire(REDIS_KEY_PREFIX_AUTH_CODE + telephone, AUTH_CODE_EXPIRE_SECONDS);
+		memberCacheService.setAuthCode(telephone, sb.toString());
 		return sb.toString();
 	}
 
@@ -84,6 +82,8 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 	public UmsMember getByUsername(String username) {
 		UmsMember member = memberCacheService.getMember(username);
 		if (member != null) {
+			//
+			System.out.println(member);
 			return member;
 		}
 		UmsMemberExample example = new UmsMemberExample();
@@ -91,6 +91,8 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 		List<UmsMember> memberList = memberMapper.selectByExample(example);
 		if (!CollectionUtils.isEmpty(memberList)) {
 			member = memberList.get(0);
+			//
+			System.out.println(member);
 			memberCacheService.setMember(member);
 			return member;
 		}
@@ -119,7 +121,8 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 		//没有该用户进行添加操作
 		UmsMember member = new UmsMember();
 		member.setUsername(username);
-		member.setPassword(password);
+		String encodePassword = passwordEncoder.encode(member.getPassword());
+		member.setPassword(encodePassword);
 		member.setPhone(telephone);
 		member.setCreateTime(new Date());
 		member.setStatus(1);

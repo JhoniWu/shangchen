@@ -1,10 +1,7 @@
 package com.example.mymall.dao.Wms;
-
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.mymall.mbg.model.WmsWareOrderTaskDetail;
 import org.apache.ibatis.annotations.Mapper;
-
 /**
  * 库存工作单
  *
@@ -14,5 +11,4 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface WmsWareOrderTaskDetailDao extends BaseMapper<WmsWareOrderTaskDetail> {
-
 }
