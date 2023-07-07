@@ -2,8 +2,8 @@ package com.example.mymall.service.Oms.Impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.example.mymall.dao.PortalProductDao;
-import com.example.mymall.dto.Oms.CartProduct;
-import com.example.mymall.dto.Oms.CartPromotionItem;
+import com.example.mymall.dto.portal.CartProduct;
+import com.example.mymall.dto.portal.CartPromotionItem;
 import com.example.mymall.mbg.mapper.OmsCartItemMapper;
 import com.example.mymall.mbg.model.OmsCartItem;
 import com.example.mymall.mbg.model.OmsCartItemExample;

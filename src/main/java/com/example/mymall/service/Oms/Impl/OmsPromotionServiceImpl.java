@@ -1,8 +1,8 @@
 package com.example.mymall.service.Oms.Impl;
 
 import com.example.mymall.dao.PortalProductDao;
-import com.example.mymall.dto.Oms.CartPromotionItem;
-import com.example.mymall.dto.Oms.PromotionProduct;
+import com.example.mymall.dto.PromotionProduct;
+import com.example.mymall.dto.portal.CartPromotionItem;
 import com.example.mymall.mbg.model.OmsCartItem;
 import com.example.mymall.mbg.model.PmsProductFullReduction;
 import com.example.mymall.mbg.model.PmsProductLadder;

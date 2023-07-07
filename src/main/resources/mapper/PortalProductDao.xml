@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mymall.dao.PortalProductDao">
 
-    <resultMap id="cartProductMap" type="com.example.mymall.dto.Oms.CartProduct" autoMapping="true">
+    <resultMap id="cartProductMap" type="com.example.mymall.dto.portal.CartProduct" autoMapping="true">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <collection property="productAttributeList" columnPrefix="attr_"
                     resultMap="com.example.mymall.mbg.mapper.PmsProductAttributeMapper.BaseResultMap">
@@ -11,7 +11,7 @@
                     resultMap="com.example.mymall.mbg.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="promotionProductMap" type="com.example.mymall.dto.Oms.PromotionProduct"
+    <resultMap id="promotionProductMap" type="com.example.mymall.dto.PromotionProduct"
                extends="com.example.mymall.mbg.mapper.PmsProductMapper.BaseResultMap">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <collection property="skuStockList" columnPrefix="sku_"
@@ -24,7 +24,7 @@
                     resultMap="com.example.mymall.mbg.mapper.PmsProductFullReductionMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <select id="getCartProduct" resultType="com.example.mymall.dto.Oms.CartProduct">
+    <select id="getCartProduct" resultType="com.example.mymall.dto.portal.CartProduct">
         SELECT p.id                            id,
                p.`name`                        name,
                p.sub_title                     subTitle,
@@ -48,7 +48,7 @@
         ORDER BY pa.sort desc
     </select>
 
-    <select id="getPromotionProductList" resultType="com.example.mymall.dto.Oms.PromotionProduct">
+    <select id="getPromotionProductList" resultType="com.example.mymall.dto.PromotionProduct">
         SELECT
         p.id,
         p.`name`,

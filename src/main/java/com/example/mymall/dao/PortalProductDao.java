@@ -1,7 +1,7 @@
 package com.example.mymall.dao;
 
-import com.example.mymall.dto.Oms.CartProduct;
-import com.example.mymall.dto.Oms.PromotionProduct;
+import com.example.mymall.dto.PromotionProduct;
+import com.example.mymall.dto.portal.CartProduct;
 import com.example.mymall.mbg.model.SmsCoupon;
 import org.apache.ibatis.annotations.Param;
 

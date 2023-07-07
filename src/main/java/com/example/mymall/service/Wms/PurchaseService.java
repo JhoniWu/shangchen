@@ -1,8 +1,8 @@
 package com.example.mymall.service.Wms;
 
 
-import com.example.mymall.dto.Wms.MergeVo;
-import com.example.mymall.dto.Wms.PurchaseDoneVo;
+import com.example.mymall.dto.MergeVo;
+import com.example.mymall.dto.PurchaseDoneVo;
 import com.example.mymall.mbg.model.WmsPurchase;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonResult;
-import com.example.mymall.dto.Wms.MergeVo;
-import com.example.mymall.dto.Wms.PurchaseDoneVo;
+import com.example.mymall.dto.MergeVo;
+import com.example.mymall.dto.PurchaseDoneVo;
 import com.example.mymall.mbg.mapper.WmsPurchaseMapper;
 import com.example.mymall.mbg.model.WmsPurchase;
 import com.example.mymall.service.Wms.PurchaseService;

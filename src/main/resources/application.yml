@@ -23,7 +23,10 @@ spring:
   rabbitmq:
     host: 127.0.0.1
     port: 5672
-    virtual-host: /
+    virtual-host: /mall
+    username: mall
+    password: mall
+    publisher-confirm-type: correlated
   data:
     mongodb:
       host: localhost # mongodb的连接地址

@@ -1,15 +1,16 @@
 package com.example.mymall.service.Oms.Impl;
 
 import com.example.mymall.dao.OmsOrderReturnApplyDao;
-import com.example.mymall.dto.Oms.OmsOrderReturnApplyResult;
-import com.example.mymall.dto.Oms.OmsReturnApplyQueryParam;
-import com.example.mymall.dto.Oms.OmsUpdateStatusParam;
+import com.example.mymall.dto.OmsOrderReturnApplyResult;
+import com.example.mymall.dto.OmsReturnApplyQueryParam;
+import com.example.mymall.dto.OmsUpdateStatusParam;
 import com.example.mymall.mbg.mapper.OmsOrderReturnApplyMapper;
 import com.example.mymall.mbg.model.OmsOrderReturnApply;
 import com.example.mymall.mbg.model.OmsOrderReturnApplyExample;
 import com.example.mymall.service.Oms.OmsOrderReturnApplyService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.List;
  * @author: Max Wu
  * @create: 2023-07-04 14:10
  **/
+@Service
 public class OmsOrderReturnApplyServiceImpl implements OmsOrderReturnApplyService {
 	@Autowired
 	private OmsOrderReturnApplyDao returnApplyDao;

@@ -1,4 +1,4 @@
-package com.example.mymall.dto.Oms;
+package com.example.mymall.dto.portal;
 
 import com.example.mymall.mbg.model.OmsCartItem;
 import io.swagger.annotations.ApiModelProperty;

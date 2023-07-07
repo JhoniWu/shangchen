@@ -1,8 +1,8 @@
 package com.example.mymall.controller;
 
 import com.example.mymall.common.CommonResult;
-import com.example.mymall.dto.Oms.CartProduct;
-import com.example.mymall.dto.Oms.CartPromotionItem;
+import com.example.mymall.dto.portal.CartProduct;
+import com.example.mymall.dto.portal.CartPromotionItem;
 import com.example.mymall.mbg.model.OmsCartItem;
 import com.example.mymall.service.Oms.OmsCartItemService;
 import com.example.mymall.service.Ums.UmsMemberService;

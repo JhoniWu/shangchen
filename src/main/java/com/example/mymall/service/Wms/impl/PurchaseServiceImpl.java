@@ -1,9 +1,9 @@
 package com.example.mymall.service.Wms.impl;
 
-import com.example.mymall.dto.Wms.MergeVo;
-import com.example.mymall.dto.Wms.PurchaseDoneVo;
-import com.example.mymall.dto.Wms.PurchaseItemDoneVo;
-import com.example.mymall.dto.Wms.WareConstant;
+import com.example.mymall.dto.MergeVo;
+import com.example.mymall.dto.PurchaseDoneVo;
+import com.example.mymall.dto.PurchaseItemDoneVo;
+import com.example.mymall.dto.WareConstant;
 import com.example.mymall.mbg.mapper.WmsPurchaseDetailMapper;
 import com.example.mymall.mbg.mapper.WmsPurchaseMapper;
 import com.example.mymall.mbg.model.WmsPurchase;

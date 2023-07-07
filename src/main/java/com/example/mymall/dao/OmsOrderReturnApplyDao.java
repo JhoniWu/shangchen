@@ -7,8 +7,8 @@ package com.example.mymall.dao;
  * @create: 2023-07-04 14:28
  **/
 
-import com.example.mymall.dto.Oms.OmsOrderReturnApplyResult;
-import com.example.mymall.dto.Oms.OmsReturnApplyQueryParam;
+import com.example.mymall.dto.OmsOrderReturnApplyResult;
+import com.example.mymall.dto.OmsReturnApplyQueryParam;
 import com.example.mymall.mbg.model.OmsOrderReturnApply;
 import org.apache.ibatis.annotations.Param;
 

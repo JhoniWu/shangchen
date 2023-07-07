@@ -1,4 +1,4 @@
-package com.example.mymall.dto.Oms;
+package com.example.mymall.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 

@@ -1,6 +1,6 @@
 package com.example.mymall.service.Oms;
 
-import com.example.mymall.dto.Oms.*;
+import com.example.mymall.dto.*;
 import com.example.mymall.mbg.model.OmsOrder;
 import org.springframework.transaction.annotation.Transactional;
 

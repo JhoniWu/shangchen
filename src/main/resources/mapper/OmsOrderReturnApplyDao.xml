@@ -37,7 +37,7 @@
         </if>
     </select>
 
-    <select id="getDetail" resultType="com.example.mymall.dto.Oms.OmsOrderReturnApplyResult">
+    <select id="getDetail" resultType="com.example.mymall.dto.OmsOrderReturnApplyResult">
         SELECT ra.*,
                ca.id             ca_id,
                ca.address_name   ca_address_name,

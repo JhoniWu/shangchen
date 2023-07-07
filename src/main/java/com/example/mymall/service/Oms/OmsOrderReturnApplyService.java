@@ -1,8 +1,8 @@
 package com.example.mymall.service.Oms;
 
-import com.example.mymall.dto.Oms.OmsOrderReturnApplyResult;
-import com.example.mymall.dto.Oms.OmsReturnApplyQueryParam;
-import com.example.mymall.dto.Oms.OmsUpdateStatusParam;
+import com.example.mymall.dto.OmsOrderReturnApplyResult;
+import com.example.mymall.dto.OmsReturnApplyQueryParam;
+import com.example.mymall.dto.OmsUpdateStatusParam;
 import com.example.mymall.mbg.model.OmsOrderReturnApply;
 
 import java.util.List;

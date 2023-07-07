@@ -1,8 +1,8 @@
 package com.example.mymall.dao;
 
-import com.example.mymall.dto.Oms.OmsOrderDeliveryParam;
-import com.example.mymall.dto.Oms.OmsOrderDetail;
-import com.example.mymall.dto.Oms.OmsOrderQueryParam;
+import com.example.mymall.dto.OmsOrderDeliveryParam;
+import com.example.mymall.dto.OmsOrderDetail;
+import com.example.mymall.dto.OmsOrderQueryParam;
 import com.example.mymall.mbg.model.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,4 +1,4 @@
-package com.example.mymall.dto.Oms;
+package com.example.mymall.dto;
 
 import com.example.mymall.mbg.model.OmsCompanyAddress;
 import com.example.mymall.mbg.model.OmsOrderReturnApply;

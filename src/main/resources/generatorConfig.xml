@@ -57,6 +57,10 @@
         <table tableName="ums_admin_permission_relation">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+        <!--积分消费设置-->
+        <table tableName="ums_integration_consume_setting">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
 
         <!--member表-->
         <table tableName="ums_member">
@@ -125,6 +129,9 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 
+        <table tableName="cms_subject">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
 
         <table tableName="cms_subject_product_relation">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>

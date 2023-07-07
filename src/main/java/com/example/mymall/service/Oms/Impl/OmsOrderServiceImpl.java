@@ -2,7 +2,7 @@ package com.example.mymall.service.Oms.Impl;
 
 import com.example.mymall.dao.OmsOrderDao;
 import com.example.mymall.dao.OmsOrderOperateHistoryDao;
-import com.example.mymall.dto.Oms.*;
+import com.example.mymall.dto.*;
 import com.example.mymall.mbg.mapper.OmsOrderMapper;
 import com.example.mymall.mbg.mapper.OmsOrderOperateHistoryMapper;
 import com.example.mymall.mbg.model.OmsOrder;
@@ -11,6 +11,7 @@ import com.example.mymall.mbg.model.OmsOrderOperateHistory;
 import com.example.mymall.service.Oms.OmsOrderService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
  * @author: Max Wu
  * @create: 2023-07-03 15:00
  **/
+@Service
 public class OmsOrderServiceImpl implements OmsOrderService {
 
 	@Autowired

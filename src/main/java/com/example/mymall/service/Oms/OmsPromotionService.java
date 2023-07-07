@@ -1,6 +1,6 @@
 package com.example.mymall.service.Oms;
 
-import com.example.mymall.dto.Oms.CartPromotionItem;
+import com.example.mymall.dto.portal.CartPromotionItem;
 import com.example.mymall.mbg.model.OmsCartItem;
 
 import java.util.List;
