@@ -225,5 +225,32 @@
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
 
+        <!--秒杀模块-->
+        <!--<table tableName="sms_flash_promotion">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_flash_promotion_session">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_flash_promotion_product_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_flash_promotion_log">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>-->
+        <table tableName="sms_seckill_promotion">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_seckill_session">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_seckill_sku_notice">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="sms_seckill_sku_relation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
     </context>
 </generatorConfiguration>
