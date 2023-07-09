@@ -21,6 +21,7 @@ import com.example.mymall.service.Ums.UmsMemberCouponService;
 import com.example.mymall.service.Ums.UmsMemberReceiveAddressService;
 import com.example.mymall.service.Ums.UmsMemberService;
 import com.github.pagehelper.PageHelper;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -76,6 +77,8 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 	private OmsOrderItemMapper orderItemMapper;
 	@Autowired
 	private CancelOrderSender cancelOrderSender;
+	@Autowired
+	private RabbitTemplate rabbitTemplate;
 
 	@Override
 	public ConfirmOrderResult generateConfirmOrder(List<Long> cartIds) {
@@ -97,6 +100,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 		//计算总金额、活动优惠、应付金额
 		ConfirmOrderResult.CalcAmount calcAmount = calcCartAmount(cartPromotionItemList);
 		result.setCalcAmount(calcAmount);
+		rabbitTemplate.convertAndSend("order-event-exchange", "order.create.order", result);
 		return result;
 	}
 
@@ -408,12 +412,13 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 	 * 锁定下单商品的所有库存
 	 */
 	//TODO 添加Redis锁
-	private void lockStock(List<CartPromotionItem> cartPromotionItemList) {
+	private boolean lockStock(List<CartPromotionItem> cartPromotionItemList) {
 		for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
 			PmsSkuStock skuStock = skuStockMapper.selectByPrimaryKey(cartPromotionItem.getProductSkuId());
 			skuStock.setLockStock(skuStock.getLockStock() + cartPromotionItem.getQuantity());
 			skuStockMapper.updateByPrimaryKeySelective(skuStock);
 		}
+		return false;
 	}
 
 	/**
@@ -422,6 +427,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
 	//TODO 添加Redis锁
 	private boolean hasStock(List<CartPromotionItem> cartPromotionItemList) {
 		for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
+			Integer stock = cartPromotionItem.getRealStock();
 			if (cartPromotionItem.getRealStock() == null || cartPromotionItem.getRealStock() <= 0) {
 				return false;
 			}
